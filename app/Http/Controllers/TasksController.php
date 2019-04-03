@@ -62,7 +62,7 @@ class TasksController extends Controller
             'data' => [
                 'task' => $task
             ]
-        ], 200);
+        ], 201);
     }
 
     public function update(Task $task, Request $request)
@@ -93,7 +93,7 @@ class TasksController extends Controller
         $task->update($request->only(['status']));
         return response()->json([
             'stauts' => 'ok',
-            'code' => 201,
+            'code' => 200,
             'messages' => ['Task was successfully updated'],
             'data' => [
                 'task' => $task->fresh()
